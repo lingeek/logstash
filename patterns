@@ -1,3 +1,3 @@
 SUDOFAILURE %{TIMESTAMP_ISO8601:Date} %{HOSTNAME:Server} sudo: pam_unix\(sudo:auth\): authentication failure; logname=%{USERNAME:logname}
 SUSUCCESSFUL %{TIMESTAMP_ISO8601:Date} %{HOSTNAME:Server} %{SYSLOGPROG}: Successful su for %{USERNAME:su_user} by root
-SQUIDLOGS %{IPORHOST:clientip} - - \[%{HTTPDATE:timestamp}\] "(?:%{WORD:method} %{NOTSPACE:request}(?: HTTP/%{NUMBER:httpversion})?|%{DATA:rawrequest})" %{NUMBER:response} (?:%{NUMBER:bytes}|-) %{QS:referrer} %{QS:agent} %{WORD:tunnel}:%{WORD:squid_status_code}
+SQUIDLOGS %{IPORHOST:clientip} - - \[%{HTTPDATE:timestamp}\] (?:%{WORD:method} %{NOTSPACE:request}(?: HTTP/%{NUMBER:httpversion})?|%{DATA:rawrequest}) %{NUMBER:response} (?:%{NUMBER:bytes}|-) %{QS:referrer} %{QS:agent} %{WORD:tunnel}:%{WORD:squid_status_code}
